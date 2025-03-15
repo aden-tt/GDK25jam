@@ -1,11 +1,15 @@
 ﻿title: Start
+position: -2,-146
 ---
-Wow!
-My first ever Yarn script in Unity!
-
--> Gosh!
--> Incredible!
--> I'm amazed!
-
-Anyway, time to get writing!
+ExampleJeff: HI
+ExampleJeff: THIS IS A YARN SCRIPT
+ExampleJeff: THESE ARE OPTIONS
+-> Increase Jeff's relationship score!
+    <<add_points ExampleJeff 15>>
+    ExampleJeff: You increased Jeff's relationship score!
+-> Do nothing
+-> Make Jeff's expression sad!
+    <<expression ExampleJeff charExampleSad>>
+    ExampleJeff: I'm frowning now D:
+That's the end of the script!
 ===
