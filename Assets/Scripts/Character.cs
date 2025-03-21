@@ -10,7 +10,6 @@ public class Character : MonoBehaviour
 
     [Header("Relationship")]
     [SerializeField] private int relationshipScore;
-    [SerializeField] private int relationshipLevel;
 
     [Header("Sprite")]
     public Image portrait;

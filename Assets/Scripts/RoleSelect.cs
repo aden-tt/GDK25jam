@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,39 +10,46 @@ public class RoleSelect : MonoBehaviour
 
     public Player player;
 
-    public DialogueController dialogueController;
-
     private int classBuff = 5;
 
-    public void setPaladin()
+    private bool isRoleSelected;
+
+    public IEnumerator WaitForRoleSelection()
+    {
+        while (isRoleSelected == false)
+        {
+            yield return null;
+        }
+        HideRoleSelect();
+    }
+
+
+    public void SetPaladin()
     {
         Debug.Log("click!");
         player.charisma += classBuff;
         player.setRole("paladin");
-        BeginScene();
+        isRoleSelected = true;
     }
 
-    public void setWizard()
+    public void SetWizard()
     {
         player.intelligence += classBuff;
         player.setRole("wizard");
-        BeginScene();
+        isRoleSelected = true;
     }
 
-    public void setRogue()
+    public void SetRogue()
     {
         player.dexterity += classBuff;
         player.setRole("rogue");
-        BeginScene();
+        isRoleSelected = true;
     }
 
     // Hides role select and begins dialogue for Day 1
-    private void BeginScene()
+    private void HideRoleSelect()
     {
         gameObject.SetActive(false);
-        dialogueController.ShowDialogueBox();
-        dialogueController.ShowPortrait();
-        dialogueController.StartDialogue("Start");
     }
 
 }
